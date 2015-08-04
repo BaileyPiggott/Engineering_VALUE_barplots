@@ -22,7 +22,9 @@ df <- bind_rows(bailey_scores, alyssa_scores) # dataframe now has two rows per d
 #subset by discipline
 all_eng <- df %>% subset(Discipline != "CHEE")  # take out chem scores
 n_eng <- nrow(all_eng)/2
-all_eng <- all_eng %>% summarise_each(funs(mean(., na.rm = TRUE))) %>% mutate(Discipline = "ALL_ENG") # average of scores per criteria and change discipline to eng for plotting
+all_eng <- all_eng %>% 
+  summarise_each(funs(mean(., na.rm = TRUE))) %>% 
+  mutate(Discipline = "Z_ENG") # average of scores per criteria and change discipline to eng for plotting
 
 mech <- df %>% subset(Discipline == "MECH")
 n_mech <- nrow(mech)/2 #divide by two because the two rater scores are separate rows

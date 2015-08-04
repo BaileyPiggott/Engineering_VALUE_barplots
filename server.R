@@ -85,19 +85,19 @@ summary <- cbind(ps_avg, ct_avg, wc_avg) %>% #combine columns
 if(input$outcome == 1){ #problem solving
   learning = ps
   x_labels <- c("Define\nProblem", "Identify\nStrategies", "Propose\nSolutions", "Evaluate\nPotential\nSolutions", "Implement\nSolutions", "Evaluate\nOutcomes")
-  bar_colours <- c("darkolivegreen2", "green4")
+  bar_colours <- c("#33cc44", "#1f7a29")
   id <- "Problem Solving Criteria"
 }
 else if(input$outcome == 2){
   learning = ct
   x_labels <- c("Explanation\nof Issues", "Evidence", "Influence of\nContext and\nAssumptions", "Student's\nPosition", "Conclusions")
-  bar_colours <- c("lightblue", "blue")   
+  bar_colours <- c("#3388ee", "#1f528f")   
   id <- "Critical Thinking Criteria"
 }
 else if(input$outcome == 3){
   learning = wc
   x_labels <- c("Context and\nPurpose\nfor Writing", "Content\nDevelopment", "Genre and\nDisciplinary\nConventions", "Sources and\nEvidence", "Syntax and\nMechanics") 
-  bar_colours <- c("gold1", "darkorange2")      
+  bar_colours <- c("#ff8833", "#cc5200")      
   id <- "Written Communication Criteria"
 }
 else{ #summary
@@ -134,7 +134,7 @@ ggplot(
   scale_fill_manual(
     values =  bar_colours, 
     name = "Legend", 
-    labels = c(all_eng_legend, disp_legend)
+    labels = c(disp_legend, all_eng_legend)
   ) # end ggplot definition
 
 
