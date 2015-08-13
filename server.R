@@ -120,7 +120,7 @@ ggplot(
     stat = "identity",
     position = "dodge", 
     width = 0.5
-  ) + 
+    ) + 
   coord_cartesian(ylim = c(0, 4)) + 
   scale_x_discrete(labels = x_labels)+
   theme(
@@ -128,8 +128,11 @@ ggplot(
     panel.grid.major.y = element_line("grey"), #change horizonatal line colour (from white)
     panel.background = element_rect("white"), #change background colour
     legend.text.align = 0.5, #center legend text (value 0 to 1)
-    panel.grid.major.x = element_blank()
-  ) +
+    panel.grid.major.x = element_blank(),
+    plot.title = element_text(size = 15),
+    axis.title = element_text(size = 14),
+    axis.text = element_text(size = 12) 
+    ) +
   labs(title = graph_title, x = id, y = "Average Rubric Level") +
   scale_fill_manual(
     values =  bar_colours, 
